@@ -12,7 +12,7 @@ function poplist() {
         //set a to a href and give it the site link
         a.setAttribute('href', element);
         //make a display the name
-        a.innerText = name;
+        a.innerHTML = name;
         console.log(element);
         li.appendChild(a);
 
