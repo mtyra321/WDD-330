@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 3 notes</title>
+    <style>
+        h1 {
+            text-align: center;
+        }
+        
+        ul {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Week 3 notes</h1>
+    <ul>
+        <li>Objects
+            <li> Declaring Objects:
+                <li>enter name with braces: const name = {};</li>
+                <li>enter name with Object constructor: const name = new Object();</li>
+            </li>
+            <li>Calling Object Methods:
+                <li>dot notation: name.show();</li>
+                <li>bracket notation: name[‘show’]();</li>
+            </li>
+            <li>Checking if properties exist:
+                <li>in: field in object
+                    <li>returns true if field is defined or inherited</li>
+                </li>
+                <li>using undefined: object.field !== undefined
+                    <li>returns true if field is defined or inherited</li>
+                </li>
+                <li>hasOwnProperty: object.hasOwnProperty(‘field’);
+                    <li>Has own property returns false when fields are inherited</li>
+                </li>
+            </li>
+
+        </li>
+        <li>DOM:
+            <li>getting elements:
+                <li>document.body gets the body</li>
+                <li>document.getElementById </li>
+                <li>document.getElementsByTagName: returns a node list of all items with that tag name</li>
+                <li>document.getElementsByClassName: returns a node list of all items with that class name</li>
+            </li>
+            <li>set attributes:
+                <li>takes 2 parameters, the attribute and the new value</li>
+                <li>className property: sets class name directly</li>
+                <li>classList property: list of all the element’s classes</li>
+            </li>
+            <li>Create element:
+                <li>createElement(“tag name ex: H1”);</li>
+            </li>
+            <li>append child:
+                <li>adds a child element to the specified element</li>
+            </li>
+        </li>
+    </ul>
+</body>
+
+</html>
