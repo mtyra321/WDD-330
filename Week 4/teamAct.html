@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            border: 2px;
+            margin: 20%;
+        }
+        
+        td {
+            /* border: 1px solid black; */
+            height: 50px;
+            width: 50px;
+        }
+        
+        .vertical {
+            border-left: solid;
+            border-right: solid;
+        }
+        
+        .horiz {
+            border-top: solid;
+            border-bottom: solid;
+        }
+        
+        button {
+            width: 40%;
+        }
+    </style>
+</head>
+<script src="teamAct.js"></script>
+
+<body>
+
+    <table id="table">
+        <tr>
+            <td onclick="touch(this)"></td>
+            <td class="vertical" onclick="touch(this)"></td>
+            <td onclick="touch(this)"></td>
+        </tr>
+        <tr>
+            <td class="horiz" onclick="touch(this)"></td>
+            <td class="vertical horiz" onclick="touch(this)"></td>
+            <td class="horiz" onclick="touch(this)"></td>
+        </tr>
+        <tr>
+            <td onclick="touch(this)"></td>
+            <td class="vertical" onclick="touch(this)"></td>
+            <td onclick="touch(this)"></td>
+        </tr>
+    </table>
+    <button onclick="reset()">reset</button>
+</body>
+
+
+</html>
