@@ -1,3 +1,4 @@
 theme: jekyll-theme-slate
 url : http://mtyra321.github.io
-baseurl : /table_of_contents.html
+permalink : table_of_contents.html
+
