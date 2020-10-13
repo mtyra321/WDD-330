@@ -21,7 +21,7 @@ function addNote(data, loading) {
 // });
 
 function saveNotes() {
-    localStorage.setItem("notes", JSON.stringify(allNotes));
+    localStorage.setItem("4notes", JSON.stringify(allNotes));
 
 }
 
@@ -43,7 +43,7 @@ function clearAllNotes() {
 
 function loadNotes() {
     allNotes = [];
-    var a = localStorage.getItem("notes");
+    var a = localStorage.getItem("4notes");
     var parsed;
     try {
         parsed = JSON.parse(a); // this is how you parse a string into JSON 

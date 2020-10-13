@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 5 notes</title>
+    <style>
+        h1 {
+            text-align: center;
+        }
+        
+        #base {
+            padding-left: 40%;
+            font-size: 20px;
+        }
+        
+        button {
+            align-self: center;
+            width: 160px;
+            height: 90px;
+            margin-left: 40%;
+            margin-top: 40px;
+        }
+        
+        input {
+            text-align: center;
+            width: 270px;
+            margin-left: 40%;
+            height: 80px;
+        }
+    </style>
+    <script src="week 5 notes.js"></script>
+
+</head>
+
+<body onload="loadNotes()">
+    <h1>Week 5 notes</h1>
+    <form action="" id="form">
+
+        <input type="text" id="input"><br>
+        <button type="button" onclick="addNote(input.value, false)">Add note</button><br>
+        <button type="button" onclick="deleteLastNote()">Delete note</button>
+
+    </form>
+    <ul id="base">
+
+    </ul>
+</body>
+<script>
+    document.getElementById("input").addEventListener("keydown", function(e) {
+        console.log("key is " + e.key);
+        if (e.key === "Enter") { //checks whether the pressed key is "Enter"
+            e.preventDefault();
+            addNote(input.value, false);
+        }
+        if (e.key === "4") { //checks whether the pressed key is "Enter"
+            e.preventDefault();
+            document.getElementById("input").value = "";
+        }
+    });
+</script>
+
+</html>
