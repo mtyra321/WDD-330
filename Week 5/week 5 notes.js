@@ -20,9 +20,28 @@ function addNote(data, loading) {
 //     }
 // });
 
+
+
 function saveNotes() {
+    // const fs = require('fs');
+    // console.log(allNotes);
+    // let data = JSON.stringify(allNotes);
+    // fs.writeFileSync('5notes.json', data);
+    var blob = new Blob([JSON.stringify(allNotes)], { type: "text/plain;charset=utf-8" });
+    download(JSON.stringify(allNotes), "./5notes.json", 'text/plain');
+
+
     localStorage.setItem("5notes", JSON.stringify(allNotes));
 
+}
+
+
+function download(content, fileName, contentType) {
+    var a = document.createElement("a");
+    var file = new Blob([content], { type: contentType });
+    a.href = URL.createObjectURL(file);
+    a.download = fileName;
+    a.click();
 }
 
 function deleteLastNote() {
@@ -56,3 +75,15 @@ function loadNotes() {
         addNote(element, true);
     }
 }
+
+
+
+
+// function download(content, fileName, contentType) {
+//     var a = document.createElement("a");
+//     var file = new Blob([content], { type: contentType });
+//     a.href = URL.createObjectURL(file);
+//     a.download = fileName;
+//     a.click();
+// }
+// download(jsonData, 'json.txt', 'text/plain');
