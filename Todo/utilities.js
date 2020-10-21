@@ -7,11 +7,18 @@ export function qs(selector) {
     return document.querySelector(selector);
 }
 
-function getFromLS(key) {
-
+export function getFromLS(key) {
+    var a = localStorage.getItem(key);
+    var parsed;
+    try {
+        parsed = JSON.parse(a); // this is how you parse a string into JSON 
+    } catch (ex) {
+        console.error(ex);
+    }
+    return parsed;
 }
 
 
-function saveToLS(key, data) {
+export function saveToLS(key, data) {
     localStorage.setItem(key, JSON.stringify(data));
 }
