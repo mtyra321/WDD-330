@@ -1,0 +1,32 @@
+.e {
+    display: flex;
+    flex-direction: row;
+    height: 200px;
+    align-items: flex-start;
+    padding-left: 35%;
+}
+
+#boundary {
+    text-align: center;
+}
+
+.e>p {
+    background-color: #0000;
+    width: 100px;
+    margin: 10px;
+    text-align: center;
+    line-height: 50px;
+    font-size: 30px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.checkButt {
+    width: 70px;
+    height: 70px;
+}
+
+.deleteButt {
+    width: 70px;
+    height: 70px;
+}
