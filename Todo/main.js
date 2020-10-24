@@ -21,6 +21,11 @@ const myTodo = new Todo("#todoList", "todos");
 let Button = qs('#addButton');
 Button.addEventListener('click', addButton);
 qs('body').addEventListener('onload', myTodo.displayAllTodos(myTodo.key));
+qs('#All').addEventListener('click', function() {
+    myTodo.displayAllTodos(myTodo.key);
+});
+qs('#Completed').addEventListener('click', myTodo.displayCompletedTodos);
+qs('#Active').addEventListener('click', myTodo.displayActiveTodos);
 
 function addButton() {
     console.log("add");

@@ -9,19 +9,20 @@ class Todo {
     constructor(parentId, key) {
         this.listElement = qs(parentId);
         this.key = key;
-
+        //  this.displayAllTodos(todos);
 
     }
 
 
-    addNewTodo(text, key) {
+    addNewTodo(text) {
         const newTodo = {
             id: new Date(),
             text: text,
             completed: false
         }
         todos.push(newTodo);
-        saveTodos(key);
+
+        saveTodos(this.key);
     }
 
     getText() {
@@ -44,45 +45,77 @@ class Todo {
         return false;
     }
     displayAllTodos(key) {
-
-
+        console.log("inside display all");
         todos = getFromLS(key);
+
         console.log("Length " + todos.length);
         let list = qs('#todoList');
         list.innerHTML = "";
         for (let index = 0; index < todos.length; index++) {
             let element = todos[index];
             //grabbing the text from the todo object
-            let text = document.createElement("p");
-            text.textContent = element.text;
-            text.class = "text";
-            //checkmark button
-            let checkButt = this.configureCheckButt(element);
-            //delete button
-            let deleteButt = this.configureDeleteButt(element);
-            //  deleteButt.setAttribute('onClick', 'this.z');
-            //deleteButt.onclick = this.z;
-
-            //  checkButt.setAttribute('onClick', "this.a");
-            deleteButt = tester(deleteButt);
-            // deleteButt.onclick = function() { this.z(); };
-            // console.log(deleteButt.onclick);
-            // deleteButt.onclick = function() {
-            //     console.log("asdfhj");
-            // };
-            //div to hold everything
-            let div = this.configureDiv();
-            //adding the check button, text, and delete button to the div
-            // div.appendChild(checkButt);
-            // div.appendChild(text);
-            // div.appendChild(deleteButt);
-            div.innerHTML = checkButt.outerHTML + text.outerHTML + deleteButt.outerHTML;
-
-            //adding the div to the bullet and the bullet to the list
+            let div = this.createListItem(element);
             list.appendChild(div);
+
         }
 
     }
+    displayActiveTodos() {
+
+        console.log("active");
+        let list = qs('#todoList');
+        list.innerHTML = "";
+        for (let index = 0; index < todos.length; index++) {
+            const element = todos[index];
+            console.log(element.completed);
+            if (element.completed == false) {
+                console.log("in if");
+
+                let div = this.createListItem(element);
+                list.appendChild(div);
+            }
+
+        }
+
+    }
+
+    displayCompletedTodos() {
+
+        console.log("complete");
+        let list = qs('#todoList');
+        list.innerHTML = "";
+        for (let index = 0; index < todos.length; index++) {
+            const element = todos[index];
+            if (element.completed == true) {
+                let div = this.createListItem(element);
+                list.appendChild(div);
+
+            }
+
+        }
+    }
+    createListItem(element) {
+        console.log("Inside createListItem");
+        let text = document.createElement("p");
+        text.textContent = element.text;
+        text.class = "text";
+        //checkmark button
+        let checkButt = this.configureCheckButt(element);
+        //delete button
+        let deleteButt = this.configureDeleteButt(element);
+        deleteButt.addEventListener('click', function() {
+            z();
+        });
+        //div to hold everything
+        let div = this.configureDiv();
+        //adding the check button, text, and delete button to the div
+
+        div.innerHTML = checkButt.outerHTML + text.outerHTML + deleteButt.outerHTML;
+        return div;
+
+    }
+
+
 
     configureDiv() {
         let div = document.createElement("div");
@@ -93,15 +126,18 @@ class Todo {
 
 
     configureDeleteButt(element) {
-        let deleteButt = document.createElement("button");
+        var deleteButt = document.createElement("button");
         deleteButt.textContent = "Delete";
         deleteButt.classList.add('deleteButt');
 
+        // deleteButt.addEventListener('click', function() {
+        //     z();
+        // });
 
         return deleteButt;
     }
     configureCheckButt(element) {
-        let checkButt = document.createElement("button");
+        var checkButt = document.createElement("button");
         checkButt.textContent = "Check Off";
         checkButt.classList.add('checkButt');
 
