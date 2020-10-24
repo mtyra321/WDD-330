@@ -31,16 +31,16 @@ class Todo {
     completeTodo(todo) {
 
     }
+
     z() {
-        console.log("wast");
-        document.getElementById("label").innerText = "test";
+        console.log("zzzzzzzzzzzzzzzzzzzzzzzzzzzzzz");
     }
 
     clearTodos() {
 
     }
     a() {
-        console.log("check");
+        console.log("aaaaaaaaaaaaaaaaaaaaa");
         return false;
     }
     displayAllTodos(key) {
@@ -60,9 +60,13 @@ class Todo {
             let checkButt = this.configureCheckButt(element);
             //delete button
             let deleteButt = this.configureDeleteButt(element);
+            //  deleteButt.setAttribute('onClick', 'this.z');
+            //deleteButt.onclick = this.z;
 
-            //   deleteButt.onclick = function() { this.z(); };
-            console.log(deleteButt.onclick);
+            //  checkButt.setAttribute('onClick', "this.a");
+            deleteButt = tester(deleteButt);
+            // deleteButt.onclick = function() { this.z(); };
+            // console.log(deleteButt.onclick);
             // deleteButt.onclick = function() {
             //     console.log("asdfhj");
             // };
@@ -84,11 +88,6 @@ class Todo {
         let div = document.createElement("div");
         div.classList.add('e');
         // div.class = "flex-container";
-        div.display = "flex";
-        // div.flexdDirection = "row";
-        // div.height = 200;
-        // div.alignItems = "flex-start";
-        // div.backgroundColor = "DodgerBlue";
         return div;
     }
 
@@ -98,20 +97,14 @@ class Todo {
         deleteButt.textContent = "Delete";
         deleteButt.classList.add('deleteButt');
 
-        deleteButt.display = "inline-flex";
-        deleteButt.setAttribute('onClick', 'this.z');
 
-        deleteButt.class = "deleteButt";
         return deleteButt;
     }
     configureCheckButt(element) {
         let checkButt = document.createElement("button");
         checkButt.textContent = "Check Off";
-        checkButt.display = "inline-flex";
         checkButt.classList.add('checkButt');
-        checkButt.setAttribute('onClick', 'this.a');
 
-        checkButt.class = "checkButt";
         return checkButt;
     }
 
@@ -121,8 +114,13 @@ class Todo {
 }
 
 
-function tester() {
+function tester(deleteButt) {
+    deleteButt.addEventListener('click', w);
     console.log("test");
+    return deleteButt;
 }
 
+function w() {
+    console.log("w");
+}
 export default Todo;
