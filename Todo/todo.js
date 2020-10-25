@@ -1,6 +1,6 @@
 import { qs, saveToLS, getFromLS } from './utilities.js';
 
-var todos = [];
+var todos;
 
 function saveTodos(key) {
     saveToLS(key, todos);
@@ -10,7 +10,7 @@ class Todo {
         this.listElement = qs(parentId);
         this.key = key;
         //  this.displayAllTodos(todos);
-
+        todos = [];
     }
 
 
@@ -71,7 +71,8 @@ class Todo {
             if (element.completed == false) {
                 console.log("in if");
 
-                let div = this.createListItem(element);
+                let div = Todo.createListItem(element);
+
                 list.appendChild(div);
             }
 
@@ -120,7 +121,6 @@ class Todo {
     configureDiv() {
         let div = document.createElement("div");
         div.classList.add('e');
-        // div.class = "flex-container";
         return div;
     }
 
@@ -129,10 +129,8 @@ class Todo {
         var deleteButt = document.createElement("button");
         deleteButt.textContent = "Delete";
         deleteButt.classList.add('deleteButt');
-
-        // deleteButt.addEventListener('click', function() {
-        //     z();
-        // });
+        console.log("COnfigure butt");
+        deleteButt.addEventListener('click', Todo.z);
 
         return deleteButt;
     }

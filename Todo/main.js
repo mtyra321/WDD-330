@@ -15,7 +15,13 @@ import { qs } from './utilities.js';
 
 const myTodo = new Todo("#todoList", "todos");
 
+document.getElementById("Task").addEventListener("keydown", function(e) {
+    if (e.key === "Enter") { //checks whether the pressed key is "Enter"
+        e.preventDefault();
+        addButton();
+    }
 
+});
 
 //qs('#addButton').addEventListener('touchend', addButton);
 let Button = qs('#addButton');
