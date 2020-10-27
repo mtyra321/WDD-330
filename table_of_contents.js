@@ -1,7 +1,7 @@
 function poplist() {
     var list = document.getElementById("list");
-    var arraylink = ["Week 1\\form.html", "Week 1\\week 1 notes.html", "Week 2\\classEx.html", "Week 2\\teamAct.html", "Week 2\\week 2 notes.html", "Week 3\\classEx.html", "Week 3\\teamAct.html", "Week 3\\week 3 notes.html", "Week 4\\week 4 notes.html", "Week 4\\teamAct.html", "Week 5\\week 5 notes hardcoded.html", "Todo\\index.html"];
-    var arrayname = ["W1 form example", "W1 notes", "W2 class Ex", "W2 team activity", "W2 notes", "W3 class Ex", "W3 team activity", "W3 notes", "W4 notes", "w4 team activity", "w5 notes", "Todo"];
+    var arraylink = ["Week 1\\form.html", "Week 1\\week 1 notes.html", "Week 2\\classEx.html", "Week 2\\teamAct.html", "Week 2\\week 2 notes.html", "Week 3\\classEx.html", "Week 3\\teamAct.html", "Week 3\\week 3 notes.html", "Week 4\\week 4 notes.html", "Week 4\\teamAct.html", "Week 5\\week 5 notes hardcoded.html", "Todo\\index.html", "Week 5\\week 5 notes.html"];
+    var arrayname = ["W1 form example", "W1 notes", "W2 class Ex", "W2 team activity", "W2 notes", "W3 class Ex", "W3 team activity", "W3 notes", "W4 notes", "w4 team activity", "w5 notes", "Todo", "My attempt at a better notes template"];
 
     for (let index = 0; index < arraylink.length; index++) {
         const element = arraylink[index];

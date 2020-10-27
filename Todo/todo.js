@@ -71,7 +71,7 @@ class Todo {
             if (element.completed == false) {
                 console.log("in if");
 
-                let div = Todo.createListItem(element);
+                let div = this.createListItem(element);
 
                 list.appendChild(div);
             }
