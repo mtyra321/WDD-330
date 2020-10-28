@@ -58,7 +58,7 @@ function displayAllTodos(key) {
 }
 
 function displayActiveTodos(key) {
-    myTodo.todos = myTodo.loadTodos(key);
+    myTodo.todos = myTodo.grabTodos(key);
 
     console.log("active");
     let list = qs('#todoList');
@@ -98,7 +98,7 @@ function createListItem(element, index) {
 }
 
 function displayCompletedTodos(key) {
-    myTodo.todos = myTodo.loadTodos(key);
+    myTodo.todos = myTodo.grabTodos(key);
 
     let list = qs('#todoList');
     list.innerHTML = "";

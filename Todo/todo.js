@@ -16,6 +16,7 @@ class Todo {
         this.listElement = qs(parentId);
         this.key = key;
         //  this.displayAllTodos(todos);
+        todos = [];
         todos = getFromLS(key);
     }
 
