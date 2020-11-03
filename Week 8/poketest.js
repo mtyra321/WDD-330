@@ -35,7 +35,7 @@ async function pokemonClicked(event) {
 }
 
 function displayDetails(details) {
-
+    let section = document.getElementById("details");
 }
 
 getPokemonAsync(url);
