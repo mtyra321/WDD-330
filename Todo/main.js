@@ -37,7 +37,9 @@ qs('#Active').addEventListener('click', function() {
 
 function addButton() {
     const inputElement = qs('#Task').value;
-
+    if (myTodo.todos == null) {
+        myTodo.todos = [];
+    }
     myTodo.addNewTodo(inputElement, myTodo.key);
     displayAllTodos(myTodo.key);
     qs('#Task').value = "";
@@ -61,7 +63,9 @@ function displayAllTodos(key) {
 
 function displayActiveTodos(key) {
     myTodo.todos = myTodo.grabTodos(key);
-
+    if (myTodo.todos == null) {
+        myTodo.todos = [];
+    }
     console.log("active");
     let list = qs('#todoList');
     list.innerHTML = "";
@@ -101,7 +105,9 @@ function createListItem(element, index) {
 
 function displayCompletedTodos(key) {
     myTodo.todos = myTodo.grabTodos(key);
-
+    if (myTodo.todos == null) {
+        myTodo.todos = [];
+    }
     let list = qs('#todoList');
     list.innerHTML = "";
     for (let index = 0; index < myTodo.todos.length; index++) {

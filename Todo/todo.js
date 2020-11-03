@@ -27,6 +27,9 @@ class Todo {
             text: text,
             completed: false
         }
+        if (todos == null) {
+            todos = [];
+        }
         newTodo.id = newTodo.id.toString();
         todos.push(newTodo);
         saveTodos(key);
