@@ -138,6 +138,7 @@ function configureCheckButt(element, index) {
     checkButt.textContent = "Check Off";
     checkButt.classList.add('checkButt');
     console.log(element.completed);
+    console.log(element.completed);
     if (element.completed == true) {
         checkButt.style.backgroundColor = "#7FFF00";
         checkButt.textContent = "Complete";
