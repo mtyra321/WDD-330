@@ -45,7 +45,9 @@ function addButton() {
 
 function displayAllTodos(key) {
     myTodo.todos = myTodo.grabTodos(key);
-
+    if (myTodo.todos == null) {
+        myTodo.todos = [];
+    }
     let list = qs('#todoList');
     list.innerHTML = "";
     for (let index = 0; index < myTodo.todos.length; index++) {
