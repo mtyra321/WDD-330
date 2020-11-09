@@ -1,0 +1,30 @@
+ul {
+    list-style: none;
+    padding-top: 20px;
+    min-width: 300px;
+    table-layout: auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+ul:click {
+    transform: translatex(300px);
+}
+
+img {
+    width: 350px;
+    height: 350px;
+}
+
+section {
+    border: solid;
+}
+
+li {
+    padding: 10px;
+    padding-top: 30px;
+    border: solid;
+    height: 60px;
+    width: 60px;
+    /* display: table-cell; */
+}
