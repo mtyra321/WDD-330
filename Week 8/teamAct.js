@@ -1,4 +1,4 @@
-const url = "https://pokeapi.co/api/v2/type/5";
+let url = "https://pokeapi.co/api/v2/type/";
 
 function convertToJson(response) {
     if (response.ok == true) {
@@ -12,6 +12,13 @@ async function getPokemonAsync(url) {
     let pokemonData = await fetch(url).then(convertToJson);
     let pokemon = pokemonData.pokemon;
     displayPokemon(pokemon);
+}
+document.getElementById("getButt").addEventListener('click', constructUrl);
+
+function constructUrl() {
+    let type = document.getElementById("type").value;
+    url += type;
+    getPokemonAsync(url);
 }
 
 function displayPokemon(list) {
@@ -57,16 +64,18 @@ function displayDetails(details) {
     }
 
 
-    section.addEventListener('click', function() {
-        document.getElementById("theList").style.transform = 'translatex(0px)';
-        document.getElementById("details").innerHTML = '';
-        document.getElementById("details").style.transform = 'translatey(0px)';
+    section.addEventListener('click', transition);
 
-    });
+}
 
+function transition() {
+    document.getElementById("details").classList.toggle("thesection");
+    document.getElementById("theList").style.transform = 'translatex(0px)';
+    document.getElementById("details").innerHTML = '';
+    document.getElementById("details").style.transform = 'translatey(0px)';
 }
 
 
 
-getPokemonAsync(url);
+//getPokemonAsync(url);
 document.getElementById("theList").addEventListener('click', pokemonClicked);
