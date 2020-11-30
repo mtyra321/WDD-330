@@ -7,7 +7,7 @@ function poplist() {
         "Week 5\\week 5 notes hardcoded.html", "Todo\\index.html", "Week 5\\week 5 notes.html",
         "Week 7\\week 7 notes.html",
         "Week 8\\index.html", "Week 8\\week 8 notes.html",
-        "Week 9\\week 9 notes.html",
+        "Week 9\\week 9 notes.html", "Week 9\\index-START.html",
         "Week 10\\week 10 notes.html"
     ];
     var arrayname = ["W1 form example", "W1 notes",
@@ -17,7 +17,7 @@ function poplist() {
         "W5 notes", "Todo", "My attempt at a better notes template",
         "Week 7 notes",
         "pokemon api example", "week 8 notes",
-        "week 9 notes",
+        "week 9 notes", "Week 9 team Activity",
         "week 10 notes"
 
     ];
