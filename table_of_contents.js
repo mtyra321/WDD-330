@@ -8,7 +8,8 @@ function poplist() {
         "Week 7\\week 7 notes.html",
         "Week 8\\index.html", "Week 8\\week 8 notes.html",
         "Week 9\\week 9 notes.html", "Week 9\\index-START.html",
-        "Week 10\\week 10 notes.html"
+        "Week 10\\week 10 notes.html",
+        "https://willits-alec.github.io/FinalProject/index.html"
     ];
     var arrayname = ["W1 form example", "W1 notes",
         "W2 class Ex", "W2 team activity", "W2 notes",
@@ -18,7 +19,8 @@ function poplist() {
         "Week 7 notes",
         "pokemon api example", "week 8 notes",
         "week 9 notes", "Week 9 team Activity",
-        "week 10 notes"
+        "week 10 notes",
+        "Final Project"
 
     ];
 
